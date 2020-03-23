@@ -1,0 +1,233 @@
+
+
+.active{
+    background-image: linear-gradient(to top, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%, #f9b43b 100%);}
+.slider{
+    width: 100%;
+    position: relative;
+    margin: auto;
+    display: flex;
+}
+.slider__wrap{
+    overflow: hidden;
+}
+
+.slider__item{
+    position: relative;
+    flex: 1;
+}
+#items{
+    right: 1px;
+}
+.slider__list{
+    display: flex;
+    width: 400%;
+    right: 0px;
+}
+.slide{
+    display: flex;
+    @include tablets {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.slide__photo{
+    flex-shrink: 0;
+    padding: rem(60px) 0;
+    flex: 1;    
+    @include tablets{
+        padding: 0; 
+    }
+}
+.slide__content{
+    margin-left: 20px;
+    font-family: Ubuntu;
+    color: #fff;
+    font-size: 13.98px;
+    font-weight: 300;
+    line-height: 24px;
+    flex: 1;
+    padding-top: 10%;
+    @include tablets {
+        padding: 0;
+      }
+
+}
+
+.slide__img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.section__title--mb{
+    margin-bottom: 50px;
+    line-height: 55px;
+}
+
+.slide__price{
+    line-height: 28px;
+    font-family: Gagalin;
+    color: #e35028;
+    font-weight: 400;
+}
+.composition{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    &:hover{
+        background-color: #eb8c38;
+        .composition__down{
+            visibility: visible;
+        }
+    }
+}
+
+.composition__icon{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+}
+.composition__down{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #fef8ec;
+    border-radius: 5px;
+    visibility: hidden;
+    z-index: 1;
+}
+.composition__list{
+    margin: 15px 0;
+    width: 270px;
+    @include phones {
+        width: 200px;
+        
+      }
+}
+.composition__item{
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 400;
+    @include phones {
+        font-size: 13px;
+        
+      }
+}
+.calories{
+    height: 80px;
+    width: 60px;
+    color: #FFF;
+    font-size: 19.9px;
+    font-weight: 400;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    @include tablets {
+        left: auto;
+        bottom: auto;
+        right: 0;
+        top: 0;
+      }
+}
+.calories__pic{
+    max-width: 100%;
+    max-height: 100%;
+}
+.calories__count{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+    font-family: 'Gagalin-Regular', Helvetica, sans-serif;
+}
+.calories__text{
+    font-size: 15px;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;      
+    transform: translateX(-50%);
+    font-family: 'Gagalin-Regular', Helvetica, sans-serif;
+}
+.slide__desc{
+    margin-bottom: rem(25px);
+}
+.slide__order{
+    align-items: flex-end;
+    display: flex;
+    @include tablets {
+        justify-content: center;
+    }
+    
+}
+.slide__count{
+    color: #e35028;
+    font-family: 'Gagalin-Regular', Helvetica, sans-serif;
+    font-size: 72px;
+    font-weight: 400;
+    letter-spacing: -1.79px;
+    line-height: 28.08px;   
+    @include tablets {
+        font-size: 60px;
+    }
+    @include phones {
+        font-size: 50px;
+    }
+}
+.slide__wallet{
+    color: #e35028;
+    font-family: 'Gagalin-Regular', Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: -0.75px;
+    line-height: 28.08px;  
+    @include tablets {
+        font-size: 25px;
+    }
+    @include phones {
+        font-size: 20px;
+    }
+    
+}
+.slide__prise{
+    margin-right: rem(30px);
+}
+.composition__text{
+    font-size: 15px;
+    position: absolute;
+    bottom: -40%;
+    left: 50%;      
+    transform: translateX(-50%);
+    font-family: 'Gagalin-Regular', Helvetica, sans-serif;
+    color: #fff;
+}
+
+.slider__page-next{
+    background: url("../img/icons/arrow-scroll.svg") no-repeat;
+    right: -15px;
+    top: 50%;
+    width: 30px;
+    height: 15px;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+.slider__page-prev{
+    background: url("../img/icons/arrow-scroll.svg") no-repeat;
+    left: -15px;
+    width: 30px;
+    top: 50%;
+    height: 15px;
+    position: absolute;
+    transform: rotate(90deg);
+}

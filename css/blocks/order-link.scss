@@ -1,0 +1,12 @@
+.order-link {
+	width: 15%;
+	@include inlineblock(middle);
+	padding: rem(9px) 0;
+	margin-left: -3%;
+	min-width: rem(85px);
+}
+@media screen and (max-width: 768px) {
+	.order-link{
+	   margin-left: -150%;
+	} 
+  }
