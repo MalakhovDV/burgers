@@ -22,12 +22,14 @@ send.addEventListener('click', event => {
      
         const xhr = new XMLHttpRequest();
         xhr.responseType='json';
-        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail/fail');
         xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
         xhr.send(data);
         xhr.addEventListener('load', () => {
             if (xhr.response.status) {
-                console.log(xhr.response.messaage);
+                renderPopup(xhr.response.message);
+            }else{
+                renderPopup(xhr.response.message);
             }
         } );
     }
@@ -59,4 +61,19 @@ function validateForm(form) {
 function validateField(field) {
     field.nextElementSibling.textContent = field.validationMessage;
     return field.checkValidity();
+}
+
+
+function renderPopup(text){
+    const popup = document.querySelector('.popup');
+
+    popup.classList.add('popup--active');
+
+    popup.querySelector('.popup__text').textContent = text;
+
+    popup.querySelector('.popup__close').addEventListener('click' , e=>{
+      e.preventDefault();
+
+      popup.classList.remove('popup--active');
+    })
 }
