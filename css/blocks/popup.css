@@ -1,0 +1,30 @@
+.popup {
+  background: #444;
+  width: 500px;
+  height: 250px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  visibility: hidden;
+  padding: 25px 30px;
+  text-align: center; }
+  .popup__close {
+    position: absolute;
+    right: 10px;
+    top: 10px; }
+  .popup__title, .popup__text {
+    color: #fff; }
+  .popup__title {
+    font-size: 20px;
+    margin-bottom: 20px; }
+  .popup--active {
+    visibility: visible;
+    display: block; }
+
+/*# sourceMappingURL=popup.css.map */

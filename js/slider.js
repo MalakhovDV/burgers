@@ -1,38 +1,62 @@
-const left = document.querySelector("#left");
-const right = document.querySelector("#right");
-const item1 = document.querySelector("#item1");
-const item2 = document.querySelector("#item2");
-const item3 = document.querySelector("#item3");
-const item4 = document.querySelector("#item4");
+let list = document.querySelector('.slider__list');
+let widthContainer = document.querySelector('.slider').clientWidth;
+let controls = document.querySelector('.slider__pages');
+var pos = 0;
 
-const minRight = 0;
-const maxRight = 2820;
-const step = 940;
-let currentRight = 0;
+function calcWidthList() {
+    const itemsCount = list.children.length;
+    const widthList = itemsCount * widthContainer; 
 
-item1.style.right = currentRight;
-item2.style.right = currentRight;
-item3.style.right = currentRight;
-item4.style.right = currentRight;
+    list.style.width = `${widthList}px`;
+}
 
-right.addEventListener("click", function(e) {
-  e.preventDefault();
-  if (currentRight < maxRight) {
-    currentRight += step;
-    item1.style.right = currentRight + "px";
-    item2.style.right = currentRight + "px";
-    item3.style.right = currentRight + "px";
-    item4.style.right = currentRight + "px";
-  }
-});
+function handlerClick(event) {
+    if (event.target.tagName === 'A') {
+        event.preventDefault(); 
+        slide(event.target);
+    }
+}
 
-left.addEventListener("click", function(e) {
-  e.preventDefault();
-  if (currentRight > minRight) {
-    currentRight -= step;
-    item1.style.right = currentRight + "px";
-    item2.style.right = currentRight + "px";
-    item3.style.right = currentRight + "px";
-    item4.style.right = currentRight + "px";
-  }
-});
+function slide(target) {
+    const vector = target.dataset.vector;// prev or next
+
+    switch (vector) {
+        case 'next':
+            slideTo(vector);
+            break;
+        case 'prev':
+            slideTo(vector);
+            break;
+    }
+}
+
+function slideTo(vector) {
+    const active = document.querySelector('.vision');
+
+    if (vector === 'next') {
+        var nextElement = active.nextElementSibling;
+    } else {
+        var prevElement = active.previousElementSibling;
+    }
+
+    if (nextElement) {
+        pos -= widthContainer;
+        active.classList.remove('vision');
+        nextElement.classList.add('vision');
+        translate(pos);
+    } else if (prevElement) {
+        pos += widthContainer;
+        active.classList.remove('vision');
+        prevElement.classList.add('vision');
+        translate(pos);
+    }
+}
+
+function translate(pos) {
+    list.style.transform = `translateX(${pos}px)`;
+}
+
+controls.addEventListener('click', handlerClick);
+
+
+window.addEventListener('load', calcWidthList);

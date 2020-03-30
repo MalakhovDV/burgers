@@ -23,9 +23,11 @@
     display: flex;
     width: 400%;
     right: 0px;
+    transition: all .5s;
 }
 .slide{
     display: flex;
+    margin: 0 15px;
     @include tablets {
         flex-direction: column;
         text-align: center;
@@ -56,8 +58,8 @@
 }
 
 .slide__img{
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 500px;
+    max-height: 500px;
 }
 .section__title--mb{
     margin-bottom: 50px;

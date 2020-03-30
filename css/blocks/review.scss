@@ -15,6 +15,23 @@
   }
 }
 
+.review__button-wrap{
+  display: none;
+  justify-content: center;
+}
+.review__button-wrap--desctop{
+  display: flex;
+  @include phones{
+    display: none;
+  }
+}
+.review__button-wrap--mobile{
+  display: none;
+  @include phones{
+    display: flex;
+  }
+}
+
 
 .review__img-wrapper {
   content: "";
