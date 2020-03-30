@@ -27,9 +27,9 @@ send.addEventListener('click', event => {
         xhr.send(data);
         xhr.addEventListener('load', () => {
             if (xhr.response.status) {
-                renderPopup(xhr.response.message);
+                renderPopup('', xhr.response.message);
             }else{
-                renderPopup(xhr.response.message);
+                renderPopup('', xhr.response.message);
             }
         } );
     }
@@ -64,11 +64,12 @@ function validateField(field) {
 }
 
 
-function renderPopup(text){
+function renderPopup(title, text){
     const popup = document.querySelector('.popup');
 
     popup.classList.add('popup--active');
 
+    popup.querySelector('.popup__title').textContent = title;
     popup.querySelector('.popup__text').textContent = text;
 
     popup.querySelector('.popup__close').addEventListener('click' , e=>{
@@ -76,4 +77,4 @@ function renderPopup(text){
 
       popup.classList.remove('popup--active');
     })
-}
+  }
