@@ -27,7 +27,7 @@ send.addEventListener('click', event => {
         xhr.send(data);
         xhr.addEventListener('load', () => {
             if (xhr.response.status) {
-                console.log('Всё ок');
+                console.log(xhr.response.messaage);
             }
         } );
     }
