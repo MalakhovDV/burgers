@@ -165,7 +165,7 @@
   .order__radio-elem:checked {
     &+.order__radio-fake {
       &:after {
-        background: url("../../img/sprite/sprite.svg#arrow-scroll") 50% no-repeat transparent;
+        background: url("../img/icons/check.svg") 50% no-repeat transparent;
         fill: #e45028;
         background-size: contain;
         width: rem(11px);
