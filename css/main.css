@@ -1268,7 +1268,7 @@ footer {
 .order__radio_checkbox .order__radio-elem + .order__radio-fake:after {
   background: transparent; }
 .order__radio_checkbox .order__radio-elem:checked + .order__radio-fake:after {
-  background: url("../../img/sprite/sprite.svg#arrow-scroll") 50% no-repeat transparent;
+  background: url("../img/icons/check.svg") 50% no-repeat transparent;
   fill: #e45028;
   background-size: contain;
   width: 0.6875rem;
