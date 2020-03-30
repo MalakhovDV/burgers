@@ -4,7 +4,7 @@
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in
- *    IE on Windows Phone and in iOS.40px
+ *    IE on Windows Phone and in iOS.
  */
 html {
   line-height: 1.15;
@@ -853,7 +853,7 @@ footer {
   .popup--active {
     visibility: visible;
     display: block; }
-@media screen and (max-width: 480px) {
+  @media screen and (max-width: 480px) {
     .popup {
       width: 300px; } }
 
@@ -1698,7 +1698,8 @@ footer {
 .slide__photo {
   flex-shrink: 0;
   padding: 3.75rem 0;
-  flex: 1; }
+  flex: 1;
+  display: flex; }
   @media screen and (max-width: 768px) {
     .slide__photo {
       padding: 0; } }
@@ -1717,8 +1718,11 @@ footer {
       padding: 0; } }
 
 .slide__img {
-  max-width: 500px;
-  max-height: 500px; }
+  max-width: 100%;
+  max-height: 100%;
+  flex-shrink: 1;
+  align-items: center;
+  object-fit: contain; }
 
 .section__title--mb {
   margin-bottom: 50px;
