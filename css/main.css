@@ -828,7 +828,7 @@ footer {
 
 .popup {
   background: #444;
-  width: 500px;
+  width: 480px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -853,6 +853,9 @@ footer {
   .popup--active {
     visibility: visible;
     display: block; }
+@media screen and (max-width: 480px) {
+    .popup {
+      width: 300px; } }
 
 .header {
   padding-top: 0.75rem;
