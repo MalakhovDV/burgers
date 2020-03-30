@@ -4,7 +4,7 @@
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in
- *    IE on Windows Phone and in iOS.
+ *    IE on Windows Phone and in iOS.40px
  */
 html {
   line-height: 1.15;
@@ -839,7 +839,7 @@ footer {
   justify-content: center;
   flex-direction: column;
   visibility: hidden;
-  padding: 20px 30px 15px 30px;
+  padding: 20px 30px 40px 30px;
   text-align: center; }
   .popup__close {
     position: absolute;
