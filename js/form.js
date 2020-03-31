@@ -28,8 +28,10 @@ send.addEventListener('click', event => {
         xhr.addEventListener('load', () => {
             if (xhr.response.status) {
                 renderPopup('', xhr.response.message);
+                myForm.reset();
             }else{
                 renderPopup('', xhr.response.message);
+                myForm.reset();
             }
         } );
     }
