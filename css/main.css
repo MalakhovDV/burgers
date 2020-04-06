@@ -431,6 +431,10 @@ html,
 body {
   height: 100%; }
 
+.maincontent {
+  height: 100vh;
+  transition: transform 1s, -webkit-transform 1s; }
+
 body {
   font-size: 1rem;
   line-height: 1.42;
@@ -615,12 +619,14 @@ footer {
       right: 10%; } }
   .burger__line {
     width: 100%;
-    height: 2px;
+    height: 4px;
+    border: #444 solid 1px;
     position: absolute;
-    background-color: #fff;
+    background-color: #aaa;
     top: 0;
     left: 0;
-    transition: all .4s; }
+    transition: all .4s;
+    border-radius: 5px; }
     .burger__line:nth-child(2) {
       top: 50%;
       transform: translateY(-50%); }
@@ -737,12 +743,12 @@ footer {
   .fixed-menu__link:after {
     width: 0.375rem;
     height: 0.375rem;
-    background: #fff; }
+    background: #555555; }
   .fixed-menu__link:before {
     width: 0rem;
     height: 0rem;
     border-radius: 50%;
-    border: 0.0625rem solid #fff;
+    border: 0.0625rem solid #555555;
     opacity: 0;
     transition: .3s; }
   .fixed-menu__link:hover:before {
@@ -750,7 +756,7 @@ footer {
     height: 0.875rem;
     opacity: 1; }
 
-.fixed-menu__item.active .fixed-menu__link:before {
+.is-active .fixed-menu__link:before {
   width: 0.875rem;
   height: 0.875rem;
   opacity: 1; }
@@ -813,7 +819,7 @@ footer {
       display: inline-flex; } }
 
 .hamburger-menu-link__bars, .hamburger-menu-link__bars:before, .hamburger-menu-link__bars:after {
-  background: #fff;
+  background: #555555;
   width: 1.5rem;
   height: 0.3125rem;
   border-radius: 0.1875rem; }
@@ -975,11 +981,8 @@ footer {
 
 .yandex-map {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: url("../img/bg/map.png") center center no-repeat;
+  height: 100%;
+  width: 100%;
   background-size: cover; }
 
 .menu-acco {
@@ -1131,9 +1134,7 @@ footer {
   padding: 0.5625rem 0;
   margin-left: -3%;
   min-width: 5.3125rem; }
-.error{
-  color: white;
-}
+
 @media screen and (max-width: 768px) {
   .order-link {
     margin-left: -150%; } }
@@ -1277,6 +1278,9 @@ footer {
   background-size: contain;
   width: 0.6875rem;
   height: 0.5625rem; }
+
+.error {
+  color: white; }
 
 .order__form-button {
   display: inline-block;
@@ -1720,11 +1724,12 @@ footer {
       padding: 0; } }
 
 .slide__img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 500px;
+  max-height: 500px;
   flex-shrink: 1;
   align-items: center;
-  object-fit: contain; }
+  object-fit: contain;
+  margin: auto; }
 
 .section__title--mb {
   margin-bottom: 50px;
@@ -1887,5 +1892,94 @@ footer {
   height: 15px;
   position: absolute;
   transform: rotate(90deg); }
+
+.video {
+  background: url("../img/bg/video-bg.png") center center no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center; }
+
+.video__container {
+  height: 100vh;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+.video__player {
+  width: 100%;
+  position: relative;
+  overflow: hidden; }
+
+#video {
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover; }
+
+.video__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  visibility: visible; }
+
+.video__play.video__play--active {
+  visibility: hidden; }
+
+.video__toolbar {
+  height: 35px;
+  width: 100%;
+  display: flex;
+  background: #3e3e3e; }
+
+.duration {
+  display: flex;
+  align-items: center;
+  flex: 1; }
+
+.duration__length {
+  width: 100%;
+  height: 4px;
+  border-radius: 1px;
+  background: #626262;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none; }
+
+.duration__length::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #626262;
+  cursor: pointer;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%; }
+
+.duration__length--other {
+  width: 58px;
+  height: 5px;
+  margin-bottom: 11px; }
+
+.sound {
+  display: flex;
+  align-items: center;
+  margin: 0 15px; }
+
+.sound__img {
+  height: 20px;
+  width: 20px;
+  margin-right: 15px;
+  margin-left: 30px; }
+
+.duration__icon, .sound__img {
+  cursor: pointer; }
+
+.duration__icon {
+  margin-left: 20px;
+  margin-right: 20px; }
 
 /*# sourceMappingURL=main.css.map */
