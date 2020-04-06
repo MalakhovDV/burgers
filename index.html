@@ -14,7 +14,7 @@
   <body>
     <div class="wrapper">
       <div class="maincontent">
-        <section class="section hero" >
+        <section class="section hero is-active" >
           <div class="container">
             <header class="header">
               <div class="header__logo"><a class="logo" href="#"><img class="logo__icon" src="./img/icons/logo.svg"></a></div>
@@ -33,13 +33,13 @@
                     </li>
                     <li class="nav__item"><a class="nav__link" href="" data-scroll-to="6">как мы работаем</a>
                     </li>
-                    <li class="nav__item"><a class="nav__link" href="" data-scroll-to="7">контакты</a>
+                    <li class="nav__item"><a class="nav__link" href="" data-scroll-to="8">контакты</a>
                     </li>
                   </ul>
                 </nav>
               </div>
               <div class="header__links">
-                  <a class="order-link btn" href="" data-scroll-to="6">Заказать</a>
+                  <a class="order-link btn" href="" data-scroll-to="7">Заказать</a>
                   <div class="burger" id="burger">
                     <span class="burger__line"></span>
                     <span class="burger__line"></span>
@@ -727,6 +727,28 @@
             <div class="popup__text"></div>
           </div>
         </section>
+        <section class="section video">
+          <div class="video__container">
+              <div class="video__player">
+                  <video id="video" poster="./img/bg/player-bg.png">
+                      <source src="video.mp4" type="video/mp4">
+                  </video>
+                  <img src="./img/icons/play-white.png" alt="Icon" class="play video__play">
+              </div>
+              <div class="video__toolbar">
+                  <div class="duration">
+                      <img src="./img/icons/play.png" alt="Icon" class="duration__icon play">
+                      <input type="range" class="duration__length" id="durationLevel" min="0">
+                  </div>
+                  <div class="sound">
+                      <img src="./img/icons/volume.svg" alt="Icon" class="sound__img" id="micLevel">
+                      <div class="sound__volume">
+                          <input type="range" class="duration__length duration__length--other" id="volumeLevel" min="0" max="10">
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </section>
         <section class="section order" >
           <div class="container">
             <div class="section__title">Закажите доставку</div>
@@ -843,7 +865,7 @@
       </div>
     </div>
     <ul class="fixed-menu">
-      <li class="fixed-menu__item"><a class="fixed-menu__link" href="" data-scroll-to="0"></a></li>
+      <li class="fixed-menu__item is-active"><a class="fixed-menu__link" href="" data-scroll-to="0"></a></li>
       <li class="fixed-menu__item"><a class="fixed-menu__link" href="" data-scroll-to="1"></a></li>
       <li class="fixed-menu__item"><a class="fixed-menu__link" href="" data-scroll-to="2"></a></li>
       <li class="fixed-menu__item"><a class="fixed-menu__link" href="" data-scroll-to="3"></a></li>
@@ -851,6 +873,7 @@
       <li class="fixed-menu__item"><a class="fixed-menu__link" href="" data-scroll-to="5"></a></li>
       <li class="fixed-menu__item"><a class="fixed-menu__link" href="" data-scroll-to="6"></a></li>
       <li class="fixed-menu__item"><a class="fixed-menu__link" href="" data-scroll-to="7"></a></li>
+      <li class="fixed-menu__item"><a class="fixed-menu__link" href="" data-scroll-to="8"></a></li>
     </ul>
 
     <div class="overlay" id="overlay">
@@ -869,18 +892,26 @@
             </li>
             <li class="overlay__menu__item"><a class="overlay__menu__link" href="" data-scroll-to="6">Как мы работаем</a>
             </li>
-            <li class="overlay__menu__item"><a class="overlay__menu__link" href="" data-scroll-to="7">Контакты</a>
+            <li class="overlay__menu__item"><a class="overlay__menu__link" href="" data-scroll-to="7">Заказать</a>
+            </li>
+            <li class="overlay__menu__item"><a class="overlay__menu__link" href="" data-scroll-to="8">Контакты</a>
             </li>
           </ul>
         </nav>
       </div>
     </div>
     
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="./js/map.js"></script>
     <script src="./js/burger-menu.js"></script>
     <script src="./js/slider.js"></script>
     <script src="./js/team-acco.js"></script>
     <script src="./js/popup.js"></script>
     <script src="./js/menu-acco.js"></script>
     <script src="./js/form.js"></script>
+    <script src="./js/video.js"></script>
+    <script src="./js/ops.js"></script>
   </body>
 </html>

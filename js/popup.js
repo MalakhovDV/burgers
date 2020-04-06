@@ -12,8 +12,11 @@ function popupReview(){
     })
     
     function renderPopup(title, text){
+      
       const popup = document.querySelector('.popup');
-  
+
+      popup.style.transform = `translate(-50%,480vh)`;
+
       popup.classList.add('popup--active');
   
       popup.querySelector('.popup__title').textContent = title;

@@ -27,10 +27,10 @@ send.addEventListener('click', event => {
         xhr.send(data);
         xhr.addEventListener('load', () => {
             if (xhr.response.status) {
-                renderPopup('', xhr.response.message);
+                renderPopup('',xhr.response.message);
                 myForm.reset();
             }else{
-                renderPopup('', xhr.response.message);
+                renderPopup(xhr.response.message);
                 myForm.reset();
             }
         } );
@@ -68,6 +68,8 @@ function validateField(field) {
 
 function renderPopup(title, text){
     const popup = document.querySelector('.popup');
+
+    popup.style.transform = `translate(-50%,680vh)`;
 
     popup.classList.add('popup--active');
 
